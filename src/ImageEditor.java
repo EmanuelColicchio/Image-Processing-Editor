@@ -45,13 +45,13 @@ class ImageEditor extends JPanel {
     }
 
     /**
-     * TODO.
+     * reads the data in from the ppm file and stores it as the new image
+     * the data read in is each pixel's red, green, and blue values
      *
-     * @param in TODO.
+     * @param in a string of integers listed in a ppm format
      */
     void readPpmImage(String in) {
         try(Scanner sc = new Scanner(new FileReader(in))) {
-            // TODO read the PPM image file into the "img" variable.
             sc.nextLine();
             // Read the width, height into the "width" and "height" variables.
             int width = sc.nextInt();
@@ -59,7 +59,6 @@ class ImageEditor extends JPanel {
             sc.nextLine();
             sc.nextLine();
             BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-            // TODO Read the pixel data.
             for(int y = 0; y < height; y++){
                 for(int x = 0; x < width; x++) {
                     int r = sc.nextInt();
@@ -79,14 +78,13 @@ class ImageEditor extends JPanel {
     }
 
     /**
-     * TODO.
+     * writes a ppm formatted string out to the given filepath
      *
-     * @param out TODO.
+     * @param out a filepath to where the ppm file should be saved
      */
     void writePpmImage(String out) {
         try(PrintWriter pw = new PrintWriter(new FileWriter(out))) {
             BufferedImage img = this.getImage();
-            // TODO write the image to the PPM file.
             int width = img.getWidth();
             int height = img.getHeight();
             pw.println("P3");
