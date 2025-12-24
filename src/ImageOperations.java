@@ -106,8 +106,8 @@ class ImageOperations {
      * @return a new BufferedImage of the newly rotated image
      */
     static BufferedImage rotate(BufferedImage img, RotateMenuItem.RotateDirection dir) {
-        int height = img.getWidth();
-        int width = img.getHeight();
+        int width = img.getWidth();
+        int height = img.getHeight();
         BufferedImage newImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         if (dir == RotateMenuItem.RotateDirection.CLOCKWISE) {
             for(int y = 0; y < height; y++){
@@ -133,8 +133,8 @@ class ImageOperations {
      * @return a new BufferedImage that repeats n times in direction dir
      */
     static BufferedImage repeat(BufferedImage img, int n, RepeatMenuItem.RepeatDirection dir) {
-        int height = img.getWidth();
-        int width = img.getHeight();
+        int width = img.getWidth();
+        int height = img.getHeight();
         BufferedImage newImg;
         // newImg must be instantiated in both branches with the correct dimensions.
         if (dir == RepeatMenuItem.RepeatDirection.HORIZONTAL) {

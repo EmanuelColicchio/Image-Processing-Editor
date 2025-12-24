@@ -27,9 +27,12 @@ class RepeatMenuItem extends JMenu {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            int n = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of times to repeat the image horizontally:"));
-            this.MAIN_PANEL.addImage(ImageOperations.repeat(MAIN_PANEL.getImage(), n, RepeatDirection.HORIZONTAL));
-            this.MAIN_PANEL.repaint();
+            String input = JOptionPane.showInputDialog("Enter the number of times to repeat the image horizontally:");
+            if(input != null) {
+                int n = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of times to repeat the image horizontally:"));
+                this.MAIN_PANEL.addImage(ImageOperations.repeat(MAIN_PANEL.getImage(), n, RepeatDirection.HORIZONTAL));
+                this.MAIN_PANEL.repaint();
+            }
         }
     }
 
