@@ -78,8 +78,8 @@ class ImageOperations {
      * @return a new BufferedImage that is mirrored in the direction dir
      */
     static BufferedImage mirror(BufferedImage img, MirrorMenuItem.MirrorDirection dir) {
-        int height = img.getWidth();
-        int width = img.getHeight();
+        int width = img.getWidth();
+        int height = img.getHeight();
         BufferedImage newImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         if (dir == MirrorMenuItem.MirrorDirection.VERTICAL) {
             for(int x = 0; x < width; x++){
